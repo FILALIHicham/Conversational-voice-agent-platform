@@ -4,7 +4,7 @@ A comprehensive platform for building, deploying, and managing intelligent voice
 
 ## Demo Video
 
-<video src="https://github.com/FILALIHicham/Conversational-voice-agent-platform/Demo.mp4" controls></video>
+https://github.com/user-attachments/assets/0a146e8c-99a5-4e29-a0c1-d16e15fe38ab
 
 ## Project Overview
 

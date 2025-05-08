@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden border border-gray-200;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600;
+  }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { 
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slideUp {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+      opacity: 0.3;
+    }
+  }
+  
+  @keyframes float2 {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(20px) translateX(-10px);
+      opacity: 0.3;
+    }
+  }
+  
+  @keyframes float3 {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(-15px) translateX(-15px);
+      opacity: 0.3;
+    }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+  
+  .animate-float1 {
+    animation: float1 6s ease-in-out infinite;
+  }
+  
+  .animate-float2 {
+    animation: float2 8s ease-in-out infinite;
+  }
+  
+  .animate-float3 {
+    animation: float3 7s ease-in-out infinite;
+  }
+  
+  .animate-shake {
+    animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+  }
+  /* Add these styles to your existing globals.css file */
+
+/* Animation for expanding/collapsing sections */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 2000px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    max-height: 2000px;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+  overflow: hidden;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+  overflow: hidden;
+}
+
+/* Status badge colors */
+.status-badge-preparation {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.status-badge-delivery {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.status-badge-completed {
+  @apply bg-green-100 text-green-800;
+}
+
+/* Table styles for order items */
+.order-item-table {
+  @apply min-w-full divide-y divide-neutral-200 text-sm;
+}
+
+.order-item-table th {
+  @apply px-3 py-2 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider bg-neutral-50;
+}
+
+.order-item-table td {
+  @apply px-3 py-2 whitespace-nowrap text-neutral-800;
+}
+
+.order-item-table tbody tr {
+  @apply hover:bg-neutral-50 transition-colors;
+}
+
+/* Hover effects */
+.customer-card {
+  @apply transition-all duration-300;
+}
+
+.customer-card:hover {
+  @apply shadow-md;
+}
+
+.order-card {
+  @apply transition-all duration-200;
+}
+
+.order-card:hover {
+  @apply bg-neutral-50;
+}
+.transition-max-height {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Status badge colors */
+.status-badge {
+  @apply text-xs rounded-full px-2 py-1;
+}
+
+.status-badge-completed {
+  @apply bg-green-100 text-green-800;
+}
+
+.status-badge-delivery {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.status-badge-preparation {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+/* Custom select styling */
+.custom-select {
+  @apply appearance-none text-xs rounded-md border border-neutral-300 p-1.5 bg-white text-neutral-700 pr-7 pl-2 cursor-pointer;
+  @apply focus:outline-none focus:ring-1 focus:ring-accent-500 focus:border-accent-500;
+  position: relative;
+}
+
+.custom-select-arrow {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+}
+
+/* Hover effects for cards */
+.customer-card {
+  @apply transition-all duration-200;
+}
+
+.customer-card:hover {
+  @apply shadow-sm bg-neutral-50;
+}
+
+.order-card {
+  @apply transition-all duration-200;
+}
+
+.order-card:hover {
+  @apply bg-neutral-50;
+}
+/* Add these additional styles to your globals.css file */
+
+/* Better table layout for order items */
+.order-items-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.order-items-table th,
+.order-items-table td {
+  padding: 0.5rem 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-items-table th:first-child,
+.order-items-table td:first-child {
+  width: 40%;
+}
+
+.order-items-table th:nth-child(2),
+.order-items-table td:nth-child(2) {
+  width: 15%;
+  text-align: center;
+}
+
+.order-items-table th:nth-child(3),
+.order-items-table td:nth-child(3),
+.order-items-table th:nth-child(4),
+.order-items-table td:nth-child(4) {
+  width: 20%;
+  text-align: right;
+}
+
+/* Make sure the order panel accommodates the table */
+.order-panel {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure content doesn't overflow containers */
+.content-container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Add responsive padding for smaller screens */
+@media (max-width: 640px) {
+  .order-items-table th,
+  .order-items-table td {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+/* Better table layout for order items */
+.order-items-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.order-items-table th,
+.order-items-table td {
+  padding: 0.5rem 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-items-table th:first-child,
+.order-items-table td:first-child {
+  width: 40%;
+}
+
+.order-items-table th:nth-child(2),
+.order-items-table td:nth-child(2) {
+  width: 15%;
+  text-align: center;
+}
+
+.order-items-table th:nth-child(3),
+.order-items-table td:nth-child(3),
+.order-items-table th:nth-child(4),
+.order-items-table td:nth-child(4) {
+  width: 20%;
+  text-align: right;
+}
+
+/* Make sure the order panel accommodates the table */
+.order-panel {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure content doesn't overflow containers */
+.content-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Smooth transitions for expanding/collapsing sections */
+.transition-max-height {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Add responsive padding for smaller screens */
+@media (max-width: 640px) {
+  .order-items-table th,
+  .order-items-table td {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}

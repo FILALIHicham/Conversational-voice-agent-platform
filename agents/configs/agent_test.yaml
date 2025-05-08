@@ -1,0 +1,23 @@
+# Sample Voice Agent Configuration
+
+# Service endpoints
+asr_url: "ws://localhost:8002/ws"
+llm_url: "http://localhost:8000"
+tts_url: "http://localhost:8001"
+
+# Agent configuration
+system_prompt_path: "C:\\Users\\hicha\\Documents\\TSP\\3A\\PFE\\Conversational-voice-agents-platform\\system_prompt.txt"
+
+knowledge_path: "C:\\Users\\hicha\\Documents\\TSP\\3A\\PFE\\Conversational-voice-agents-platform\\restaurant_menu.md"
+
+# Text-to-speech configuration
+tts:
+  voice: "af_heart"  # Use one of the available voices
+  speed: 1.0  # Normal speed (0.5 to 2.0)
+
+# Voice activity detection configuration
+vad:
+  threshold: 0.01  # Energy threshold for speech detection
+  speech_pad_ms: 300  # Padding to add after speech ends
+  min_speech_ms: 100  # Minimum speech segment duration
+  min_silence_ms: 1200  # Minimum silence duration to end segment
